@@ -24,7 +24,6 @@ public class Square implements ISquare{
 		this.snake=snake;
 	}
 	// move a player in the square
-	@Override
 	public void addPlayer(Player player) {
 		myPlayer=player;
 	}
@@ -45,7 +44,7 @@ public class Square implements ISquare{
 	
 	//These are controll for my output string
 	private String getNamePlayer() {
-		if(myPlayer!=null) {
+		if (isOccupied()) {
 			return myPlayer.getName();
 		}
 		return "";

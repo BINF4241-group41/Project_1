@@ -14,7 +14,6 @@ public class LastSquare implements ISquare {
 		return (myPlayer != null);
 	}
 	
-	@Override
 	public void addPlayer(Player player) {
 		myPlayer=player;
 	}
@@ -22,8 +21,6 @@ public class LastSquare implements ISquare {
 	public void removePlayer() {
 		myPlayer = null;
 	}
-
-	@Override
 	public String stamp() {
 		return "["+numberSquare+"]";
 	}

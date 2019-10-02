@@ -5,11 +5,12 @@ import java.util.ArrayList;
 
 public class FirstSquare implements ISquare {
 
-	private ArrayList<Player> players = new ArrayList<Player>();
+	private ArrayList<Player> players;
 	private int numberSquare=0;
 	
 	public FirstSquare(int numberSquare) {
 		this.numberSquare=numberSquare;
+		players = new ArrayList<Player>();
 	}
 
 	public void addPlayer(Player p) {
@@ -20,11 +21,6 @@ public class FirstSquare implements ISquare {
 		players.remove(player);
 	}
 
-	public boolean isOccupied() {
-		return (players.size() != 0);
-	}
-
-	@Override
 	public String stamp() {
 		return "["+numberSquare+getListAsName()+"]";
 	}
