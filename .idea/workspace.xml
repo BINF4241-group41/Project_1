@@ -2,7 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4edb9bae-d715-49da-b49d-ad160979132b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ISquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Dice.java" beforeDir="false" afterPath="$PROJECT_DIR$/Dice.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/FirstSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/FirstSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Game.java" beforeDir="false" afterPath="$PROJECT_DIR$/Game.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/InterfaceSquare.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/LastSquare.java" beforeDir="false" afterPath="$PROJECT_DIR$/LastSquare.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Player.java" beforeDir="false" afterPath="$PROJECT_DIR$/Player.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ladders.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ladders.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/snake.java" beforeDir="false" afterPath="$PROJECT_DIR$/Snake.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/square.java" beforeDir="false" afterPath="$PROJECT_DIR$/Square.java" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -55,7 +65,7 @@
       <option name="presentableId" value="Default" />
       <updated>1570026213650</updated>
       <workItem from="1570026216440" duration="1544000" />
-      <workItem from="1570031285294" duration="1043000" />
+      <workItem from="1570031285294" duration="4771000" />
     </task>
     <servers />
   </component>

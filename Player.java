@@ -1,11 +1,22 @@
+package project;
+
+
 public class Player {
 
-    public String name;
-    public Square position;
+    private String name;
+    private Square position;
 
     Player(String playerName) {
         this.name = playerName;
         // TODO: Initialize to first square.
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(playerName) {
+        this.name = playerName;
     }
 
     public void setPosition(Square destination) {

@@ -1,5 +1,6 @@
 package project;
 
+
 public class Game {
 	
 	private static final int NUMBER_SQUARE=10;
@@ -31,7 +32,7 @@ public class Game {
 	}
 	
 	public boolean checkWin() {
-		return lastSquare.checkWin();
+		return lastSquare.isOccupied();
 	}
 	
 

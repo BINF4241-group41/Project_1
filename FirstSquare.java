@@ -1,30 +1,29 @@
 package project;
 
+
 import java.util.ArrayList;
 
-public class FirstSquare implements InterfaceSquare {
+public class FirstSquare implements ISquare {
 
-	private ArrayList<Player> players=null;
+	private ArrayList<Player> players = new ArrayList<Player>();
 	private int numberSquare=0;
 	
 	public FirstSquare(int numberSquare) {
 		this.numberSquare=numberSquare;
 	}
-	
-	
-	public void setPlayer(Player p) {
-	
-	}
 
-	@Override
-	public boolean setPerson(Player p) {
+	public void addPlayer(Player p) {
 		players.add(p);
-		return true;
 	}
 
-	public void remove(Player player) {
+	public void removePlayer(Player player) {
 		players.remove(player);
 	}
+
+	public boolean isOccupied() {
+		return (players.size() != 0);
+	}
+
 	@Override
 	public String stamp() {
 		return "["+numberSquare+getListAsName()+"]";

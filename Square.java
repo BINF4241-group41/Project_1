@@ -1,17 +1,19 @@
 package project;
 
 
-public class Square implements InterfaceSquare{
+public class Square implements ISquare{
 	
 	
 	private int numberSquare=0;
 	private Player myPlayer=null;
 	private Ladder ladder=null;
 	private Snake snake=null;
+
 	//3 different constructors for different parameters
 	public Square(int numberSquare) {
 		this.numberSquare=numberSquare;
 	}
+
 	public Square(int numberSquare, Ladder ladder) {
 		this.numberSquare=numberSquare;
 		this.ladder=ladder;
@@ -23,17 +25,18 @@ public class Square implements InterfaceSquare{
 	}
 	// move a player in the square
 	@Override
-	public boolean setPerson(Player player) {
-		if(myPlayer==null) {
-			myPlayer=player;
-			return true;
-		}
-		return false;
+	public void addPlayer(Player player) {
+		myPlayer=player;
 	}
 	// remove a player from the square
 	public void removePlayer() {
 		myPlayer=null;
 	}
+
+	public boolean isOccupied() {
+		return (myPlayer != null);
+	}
+
 	@Override
 	public String stamp() {
 		return "["+numberSquare+getNamePlayer()+getLadder()+getSnake()+"]";

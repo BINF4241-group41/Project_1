@@ -1,9 +1,8 @@
 package project;
 
-public class LastSquare implements InterfaceSquare {
 
-	
-	
+public class LastSquare implements ISquare {
+
 	private Player myPlayer=null;
 	private int numberSquare=0;
 
@@ -11,20 +10,18 @@ public class LastSquare implements InterfaceSquare {
 		this.numberSquare=numberSquare;
 	}
 	
-	public boolean checkWin() {
-		if (myPlayer!=null)return true;
-		return false;
+	public boolean isOccupied() {
+		return (myPlayer != null);
 	}
 	
 	@Override
-	public boolean setPerson(Player player) {
-		if(myPlayer==null) {
-			myPlayer=player;
-			return true;
-		}
-		return false;
+	public void addPlayer(Player player) {
+		myPlayer=player;
 	}
 
+	public void removePlayer() {
+		myPlayer = null;
+	}
 
 	@Override
 	public String stamp() {
