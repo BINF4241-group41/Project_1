@@ -19,7 +19,7 @@ public class Game {
 		dice = new Dice();
 
 	    boardSize = size;
-	    gameBoard = new Square[size - 2];
+	    gameBoard = new Square[size-2];
 		firstSquare = new FirstSquare(1); //first square
 
 		nextPlayerIndex = 0;
@@ -73,7 +73,7 @@ public class Game {
 
 	public String stamp() {
 		String result="";
-		for(int i = 2; i < boardSize; ++i) {
+		for(int i = 0; i < boardSize-2; ++i) {
             result.concat(gameBoard[i].stamp());
         }
 		return firstSquare.stamp() + result + lastSquare.stamp();

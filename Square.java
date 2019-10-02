@@ -51,7 +51,7 @@ public class Square implements ISquare{
 	
 	//These are controll for my output string
 	private String getNamePlayer() {
-		if(myPlayer!=null) {
+		if (isOccupied()) {
 			return myPlayer.getName();
 		}
 		return "";
