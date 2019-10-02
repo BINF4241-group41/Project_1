@@ -17,7 +17,7 @@ public class MainClass {
         Scanner myScanner = new Scanner(System.in);
 
         do {
-            System.out.println("Enter the number of squares of the board");
+            System.out.println("Enter the number of squares of the board (must be positive)");
             String size = myScanner.nextLine();
             boardSize = Integer.parseInt(size);
         }
@@ -40,5 +40,12 @@ public class MainClass {
         }
 
         myGame = new Game(boardSize, playerNames.toArray(new String[playerNames.size()]));
+
+        while (!myGame.isFinished()) {
+            myGame.nextAction();
+            String gameStamp = myGame.stamp();
+            System.out.println(gameStamp);
+            // get winner?
+        }
     }
 }

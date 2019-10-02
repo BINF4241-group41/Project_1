@@ -23,9 +23,15 @@ public class Square implements ISquare{
 		this.numberSquare=numberSquare;
 		this.snake=snake;
 	}
-	// move a player in the square
+
+	public int getNumberSquare() {
+		return numberSquare;
+	}
+
+	// move a player to the square
 	@Override
 	public void addPlayer(Player player) {
+		// TODO: check for ladders/snakes -> trigger corresponding action
 		myPlayer=player;
 	}
 	// remove a player from the square

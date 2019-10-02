@@ -12,8 +12,12 @@ public class FirstSquare implements ISquare {
 		this.numberSquare=numberSquare;
 	}
 
-	public void addPlayer(Player p) {
-		players.add(p);
+	public int getNumberSquare() {
+		return numberSquare;
+	}
+
+	public void addPlayer(Player player) {
+		players.add(player);
 	}
 
 	public void removePlayer(Player player) {

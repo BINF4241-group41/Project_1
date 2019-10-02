@@ -9,7 +9,11 @@ public class LastSquare implements ISquare {
 	public LastSquare(int numberSquare) {
 		this.numberSquare=numberSquare;
 	}
-	
+
+	public int getNumberSquare() {
+		return numberSquare;
+	}
+
 	public boolean isOccupied() {
 		return (myPlayer != null);
 	}

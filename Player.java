@@ -19,7 +19,16 @@ public class Player {
         this.name = playerName;
     }
 
+    public void leavePosition() {
+        position.removePlayer();
+    }
+
     public void setPosition(Square destination) {
         this.position = destination;
+        position.addPlayer(this);
+    }
+
+    public Square getPosition() {
+        return position;
     }
 }

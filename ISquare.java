@@ -7,6 +7,6 @@ public interface ISquare {
 
     private int numberSquare;
 
-    public void addPlayer(); // Game should check if already occupied.
+    public void addPlayer(Player player); // Game should check if already occupied.
     public void removePlayer();
 }
