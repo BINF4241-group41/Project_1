@@ -5,4 +5,4 @@
 **Members:**
 *  Jorge José Vega Espinar
 *  Massimo Bertocchi
-*  Raffael
+*  Raffael Botschen

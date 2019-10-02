@@ -7,7 +7,7 @@ public class Player {
         this.name = playerName;
         // TODO: Initialize to first square.
     }
-    
+
     public void setPosition(Square destination) {
         this.position = destination;
     }
