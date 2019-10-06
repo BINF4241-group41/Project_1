@@ -3,7 +3,7 @@ package project;
 
 import java.util.ArrayList;
 
-public class FirstSquare implements ISquare {
+public class FirstSquare extends Square {
 
 	private ArrayList<Player> players;
 	private int numberSquare=0;

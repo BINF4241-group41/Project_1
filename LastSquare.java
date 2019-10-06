@@ -1,7 +1,7 @@
 package project;
 
 
-public class LastSquare implements ISquare {
+public class LastSquare extends Square {
 
 	private Player myPlayer=null;
 	private int numberSquare=0;
