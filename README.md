@@ -4,5 +4,5 @@
 ### Snakes and Ladders
 **Members:**
 *  Jorge José Vega Espinar
-*  Massimo Bertocchi
+*  Massimo Bertocchi (lite mars)
 *  Raffael Botschen
