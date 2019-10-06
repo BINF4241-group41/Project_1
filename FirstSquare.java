@@ -21,7 +21,7 @@ public class FirstSquare extends Square {
 	}
 
 	public String toString() {
-		return "["+numberSquare+getPlayerNamesList()+"]";
+		return "[" + numberSquare + getPlayerNamesList() + "]";
 	}
 
 	public String getPlayerName() { return getPlayerNames() };
@@ -39,7 +39,7 @@ public class FirstSquare extends Square {
 	private String getPlayerNames() {
 		String s="";
 		for(Player p : players) {
-			s.concat(p.getName() + ", ");
+			s.concat(p.getName() + ",");
 		}
 		return s;
 	}

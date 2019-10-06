@@ -1,71 +1,38 @@
 package project;
 
 
-// Square without functionality (no snakes/ladders).
-public class NormalSquare extends Square{
+// Special square that moves the player to another square.
+// Has no player on its own.
+public class TeleportSquare extends Square{
 
+    private Square teleportDestination = null;
 
-    private Player myPlayer=null;
-    private Ladder ladder=null;
-    private Snake snake=null;
-
-    //3 different constructors for different parameters
-    public NormalSquare(int numberSquare) {
+    public TeleportSquare(int numberSquare, Square destination) {
         this.numberSquare=numberSquare;
-    }
-
-    public NormalSquare(int numberSquare, Ladder ladder) {
-        this.numberSquare=numberSquare;
-        this.ladder=ladder;
-    }
-
-    public NormalSquare(int numberSquare, Snake snake ) {
-        this.numberSquare=numberSquare;
-        this.snake=snake;
+        teleportDestination = destination;
     }
 
     public int getNumberSquare() {
         return numberSquare;
     }
 
-    // move a player to the square
-    @Override
     public void addPlayer(Player player) {
-        // TODO: check for ladders/snakes -> trigger corresponding action
-        myPlayer=player;
+        teleportDestination.addPlayer();
     }
 
     // remove a player from the square
-    public void removePlayer() {
-        myPlayer=null;
-    }
+    public void removePlayer() { }
 
     public boolean isOccupied() {
-        return (myPlayer != null);
+        return teleportDestination.isOccupied();
     }
 
     @Override
     public String toString() {
-        String playerString = (myPlayer ? "<" + myPlayer.getName() + ">" : "")
-        return "[" + numberSquare + playerString + getLadder() + getSnake() + "]";
+        return "[" + numberSquare + "->" + teleportDestination.getNumberSquare() + "]";
     }
 
     public String getPlayerName() {
-        return (myPlayer ? myPlayer.getName() : "")
-    }
-
-
-    private String getLadder() {
-        if(ladder!=null) {
-            return ladder.getStringStart()+"->"+ladder.getStringEnd();
-        }
-        return "";
-    }
-
-    private String getSnake() {
-        if(snake!=null) {
-            return snake.getStringEnd()+"<-"+snake.getStringEnd();
-        }
         return "";
     }
 }
