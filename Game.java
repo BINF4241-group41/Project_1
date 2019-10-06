@@ -31,7 +31,7 @@ public class Game {
 		
 		for (Player p : players) { //set up all players in the first square
 			this.players.add(p);
-            firstSquare.addPlayer(p);
+            p.setPosition(firstSquare);
         }
 	}
 
@@ -66,20 +66,21 @@ public class Game {
 				currentPlayer.setPosition(gameBoard.get(destinationNumber));
 			}
 
+			// loop through players
 			nextPlayerIndex = (nextPlayerIndex + 1) % players.size();
 		}
 	}
 
 
-	public String stamp() {
+	public String toString() {
 		String result="";
 		for(int i = 0; i < boardSize-2; ++i) {
-            result.concat(gameBoard[i].stamp());
+            result.concat(gameBoard[i].toString());
         }
-		return firstSquare.stamp() + result + lastSquare.stamp();
+		return firstSquare.toString() + result + lastSquare.toString();
 	}
 	
 	public boolean isFinished() {
-		return lastSquare.isOccupied() || players.size() == 0;
+		return lastSquare.isOccupied()
 	}
 }

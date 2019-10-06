@@ -43,7 +43,7 @@ public class MainClass {
 
         while (!myGame.isFinished()) {
             myGame.nextAction();
-            String gameStamp = myGame.stamp();
+            String gameStamp = myGame.toString();
             System.out.println(gameStamp);
             // get winner?
         }

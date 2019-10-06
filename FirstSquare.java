@@ -6,15 +6,10 @@ import java.util.ArrayList;
 public class FirstSquare extends Square {
 
 	private ArrayList<Player> players;
-	private int numberSquare=0;
 	
 	public FirstSquare(int numberSquare) {
 		this.numberSquare=numberSquare;
 		players = new ArrayList<Player>();
-	}
-
-	public int getNumberSquare() {
-		return numberSquare;
 	}
 
 	public void addPlayer(Player player) {
@@ -25,7 +20,7 @@ public class FirstSquare extends Square {
 		players.remove(player);
 	}
 
-	public String stamp() {
+	public String toString() {
 		return "["+numberSquare+getListAsName()+"]";
 	}
 

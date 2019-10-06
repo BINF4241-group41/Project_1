@@ -4,25 +4,12 @@ package project;
 // Square without functionality (no snakes/ladders).
 public class NormalSquare extends Square{
 	
-	
-	private int numberSquare=0;
-	private Player myPlayer=null;
-	private Ladder ladder=null;
-	private Snake snake=null;
 
-	//3 different constructors for different parameters
+	private Player myPlayer=null;
+
+
 	public NormalSquare(int numberSquare) {
 		this.numberSquare=numberSquare;
-	}
-
-	public NormalSquare(int numberSquare, Ladder ladder) {
-		this.numberSquare=numberSquare;
-		this.ladder=ladder;
-	}
-	
-	public NormalSquare(int numberSquare, Snake snake ) {
-		this.numberSquare=numberSquare;
-		this.snake=snake;
 	}
 
 	public int getNumberSquare() {
@@ -45,7 +32,7 @@ public class NormalSquare extends Square{
 	}
 
 	@Override
-	public String stamp() {
+	public String toString() {
 		return "["+numberSquare+getNamePlayer()+getLadder()+getSnake()+"]";
 	}
 	
@@ -70,5 +57,4 @@ public class NormalSquare extends Square{
 		}
 		return "";
 	}
-	
 }

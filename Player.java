@@ -25,6 +25,8 @@ public class Player {
 
     public void setPosition(Square destination) {
         this.position = destination;
+
+        // Should Player or Game handle this?
         position.addPlayer(this);
     }
 
