@@ -41,11 +41,11 @@ public class MainClass {
 
         myGame = new Game(boardSize, playerNames.toArray(new String[playerNames.size()]));
 
-        while (!myGame.isFinished()) {
+        do {
             myGame.nextAction();
-            String gameStamp = myGame.toString();
-            System.out.println(gameStamp);
-            // get winner?
         }
+        while (!myGame.isFinished());
+
+        System.out.println(myGame.getLastSquare.getPlayerName());
     }
 }

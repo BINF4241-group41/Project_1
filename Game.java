@@ -6,9 +6,7 @@ public class Game {
 	private Dice dice;
 
 	private int boardSize;
-	private Square[] gameBoard;
-	private FirstSquare firstSquare;
-	private LastSquare lastSquare;
+	private Square[] gameBoard; // squares starting at index 1
 
 	private ArrayList<Player> players;
 	private nextPlayerIndex;
@@ -16,28 +14,36 @@ public class Game {
 
 	public Game(int size, Player... players) {
 
+		// ensure firstSquare != lastSquare
+		if (size < 2) {
+			size = 2;
+		}
+
 		dice = new Dice();
 
 	    boardSize = size;
-	    gameBoard = new Square[size-2];
-		firstSquare = new FirstSquare(1); //first square
-
+	    gameBoard = new Square[boardSize + 1];
 		nextPlayerIndex = 0;
 
-		for(int i = 2; i < size; ++i)
+		gameBoard[1] = new FirstSquare(1);
+		gameBoard[boardSize] = new LastSquare(boardSize);
+
+		for(int i = 2; i < boardSize; ++i)
 			gameBoard[i]= new Square(i); //normal square
-		
-		lastSquare = new LastSquare(size); //last square
 		
 		for (Player p : players) { //set up all players in the first square
 			this.players.add(p);
-            p.setPosition(firstSquare);
+            p.setPosition(gameBoard[1]);
         }
 	}
 
 	public int getBoardSize() {
 	    return this.boardSize;
     }
+
+    public Square getFirstSquare() { return gameBoard[1]; }
+
+	public Square getLastSquare() { return gameBoard[boardSize]; }
 
 
     // Rolls the dice and moves the player accordingly (obeying the rules).
@@ -59,12 +65,14 @@ public class Game {
 			// went to before the first square or already occupied -> go to beginning
 			if (destinationNumber <= 1 || gameBoard.get(destinationNumber).isOccupied()) {
 				currentPlayer.leavePosition();
-				currentPlayer.setPosition(firstSquare);
+				currentPlayer.setPosition(gameBoard[1]);
 			}
 			else {
 				currentPlayer.leavePosition();
 				currentPlayer.setPosition(gameBoard.get(destinationNumber));
 			}
+
+			System.out.println(currentPlayer.getName() + " rolls " + diceResult + " : " this.toString());
 
 			// loop through players
 			nextPlayerIndex = (nextPlayerIndex + 1) % players.size();
@@ -74,13 +82,13 @@ public class Game {
 
 	public String toString() {
 		String result="";
-		for(int i = 0; i < boardSize-2; ++i) {
+		for(int i = 1; i <= boardSize; ++i) {
             result.concat(gameBoard[i].toString());
         }
-		return firstSquare.toString() + result + lastSquare.toString();
+		return result;
 	}
 	
 	public boolean isFinished() {
-		return lastSquare.isOccupied()
+		return gameBoard[boardSize].isOccupied()
 	}
 }

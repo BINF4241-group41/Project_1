@@ -15,5 +15,7 @@ public abstract class Square {
     public void addPlayer(Player player); // Game should check if already occupied.
     public void removePlayer();
 
+    public String getPlayerName();
+
     public String toString();
 }

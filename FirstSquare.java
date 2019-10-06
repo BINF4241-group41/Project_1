@@ -21,14 +21,25 @@ public class FirstSquare extends Square {
 	}
 
 	public String toString() {
-		return "["+numberSquare+getListAsName()+"]";
+		return "["+numberSquare+getPlayerNamesList()+"]";
 	}
 
+	public String getPlayerName() { return getPlayerNames() };
 
-	private String getListAsName() {
+	// helper function for toString
+	private String getPlayerNamesList() {
 		String s="";
-		for(Player p:players) {
-			s.concat(p.getName());
+		for(Player p : players) {
+			s.concat("<" + p.getName() + ">");
+		}
+		return s;
+	}
+
+	// helper function for getPlayerName
+	private String getPlayerNames() {
+		String s="";
+		for(Player p : players) {
+			s.concat(p.getName() + ", ");
 		}
 		return s;
 	}

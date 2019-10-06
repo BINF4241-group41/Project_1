@@ -34,6 +34,7 @@ public class NormalSquare extends Square{
         // TODO: check for ladders/snakes -> trigger corresponding action
         myPlayer=player;
     }
+
     // remove a player from the square
     public void removePlayer() {
         myPlayer=null;
@@ -45,17 +46,15 @@ public class NormalSquare extends Square{
 
     @Override
     public String toString() {
-        return "["+numberSquare+getNamePlayer()+getLadder()+getSnake()+"]";
+        String playerString = (myPlayer ? "<" + myPlayer.getName() + ">" : "")
+        return "[" + numberSquare + playerString + getLadder() + getSnake() + "]";
+    }
+
+    public String getPlayerName() {
+        return (myPlayer ? myPlayer.getName() : "")
     }
 
 
-    //These are controll for my output string
-    private String getNamePlayer() {
-        if (isOccupied()) {
-            return myPlayer.getName();
-        }
-        return "";
-    }
     private String getLadder() {
         if(ladder!=null) {
             return ladder.getStringStart()+"->"+ladder.getStringEnd();
