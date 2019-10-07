@@ -36,6 +36,7 @@ public class NormalSquare extends Square{
 		return "[" + numberSquare + "]";
 	}
 
+	@Override
 	public String getPlayerName() {
 		return (myPlayer != null ? myPlayer.getName() : "");
 	}

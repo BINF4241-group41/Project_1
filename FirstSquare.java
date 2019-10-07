@@ -28,8 +28,6 @@ public class FirstSquare extends Square {
 		return "[" + numberSquare + getPlayerNamesList() + "]";
 	}
 
-	public String getPlayerName() { return getPlayerNames(); }
-
 	public boolean isOccupied() {
 		return false;
 	}
@@ -37,19 +35,9 @@ public class FirstSquare extends Square {
 	// helper function for toString
 	private String getPlayerNamesList() {
 		String s="";
-		for(Player p : players) {
+		for (Player p : players) {
 			s += "<" + p.getName() + ">";
 		}
 		return s;
 	}
-
-	// helper function for getPlayerName
-	private String getPlayerNames() {
-		String s="";
-		for(Player p : players) {
-			s.concat(p.getName() + ",");
-		}
-		return s;
-	}
-
 }

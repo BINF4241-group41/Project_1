@@ -3,7 +3,7 @@ package Project_1;
 
 public class LastSquare extends Square {
 
-	private Player myPlayer=null;
+	private Player myPlayer = null;
 
 	public LastSquare(int numberSquare) {
 		this.numberSquare=numberSquare;
@@ -21,6 +21,7 @@ public class LastSquare extends Square {
 		myPlayer = null;
 	}
 
+	@Override
 	public String getPlayerName() { return (myPlayer != null ? myPlayer.getName() : ""); }
 
 	public String toString() {

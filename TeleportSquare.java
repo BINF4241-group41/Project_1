@@ -37,8 +37,4 @@ public class TeleportSquare extends Square{
             return "[" + teleportDestination.getNumberSquare() + "<-" + numberSquare + "]";
         }
     }
-
-    public String getPlayerName() {
-        return "";
-    }
 }

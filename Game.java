@@ -60,9 +60,9 @@ public class Game {
 
     public Player getNextPlayer() { return players.get(nextPlayerIndex); }
 
-    public Square getFirstSquare() { return gameBoard[1]; }
+    public FirstSquare getFirstSquare() { return (FirstSquare)gameBoard[1]; }
 
-	public Square getLastSquare() { return gameBoard[boardSize]; }
+	public LastSquare getLastSquare() { return (LastSquare)gameBoard[boardSize]; }
 
 
     // Rolls the dice and moves the player accordingly (obeying the rules).
@@ -71,10 +71,10 @@ public class Game {
 		if (players.size() != 0) {
 
 			Player currentPlayer = players.get(nextPlayerIndex);
+			currentPlayer.leavePosition(); // leave before calculating new position -> prevent self collision
 
 			int destinationNumber = calculateDestinationIndex(currentPlayer.getPosition().getNumberSquare(), stepCount);
 
-			currentPlayer.leavePosition();
 			currentPlayer.setPosition(gameBoard[destinationNumber]);
 
 			// loop through players
