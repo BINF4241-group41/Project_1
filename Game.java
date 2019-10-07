@@ -69,30 +69,36 @@ public class Game {
 
 		if (players.size() != 0) {
 
-			int stepsToMove = dice.rollDice();
+			int diceResult = dice.rollDice();
 			currentPlayer = players.get(nextPlayerIndex);
 
-			// player would go over last square -> move backwards after reaching it
-			if (currentPlayer.getPosition().getNumberSquare() + diceResult > boardSize) {
-				stepsToMove = boardSize - currentPlayer.getPosition().getNumberSquare() - diceResult;
-			}
+			destinationNumber = calculateDestinationIndex(currentPlayer.getPosition.getNumberSquare(), diceResult);
 
-			// index (numberSquare) of square where player lands
-			int destinationNumber = currentPlayer.getPosition().getNumberSquare() + stepsToMove;
-
-			// went to before the first square or already occupied -> go to beginning
-			if (destinationNumber <= 1 || gameBoard.get(destinationNumber).isOccupied()) {
-				currentPlayer.leavePosition();
-				currentPlayer.setPosition(gameBoard[1]);
-			}
-			else {
-				currentPlayer.leavePosition();
-				currentPlayer.setPosition(gameBoard.get(destinationNumber));
-			}
+			currentPlayer.leavePosition();
+			currentPlayer.setPosition(gameBoard.get(destinationNumber));
 
 			// loop through players
 			nextPlayerIndex = (nextPlayerIndex + 1) % players.size();
 		}
+	}
+
+
+	// Index (numberSquare) of the square to which the player should be moved with diceResult.
+	private int calculateDestinationIndex(int originIndex, int stepsForward) {
+
+		// player would go over last square -> move backwards after reaching it
+		if (origin + stepsForward > boardSize) {
+			stepsToMove = boardSize - originIndex - stepsForward;
+		}
+
+		// index (numberSquare) of square where player will land
+		int destinationNumber = originIndex + stepsToMove;
+
+		// went to before the first square or destination already occupied -> go to beginning
+		if (destinationNumber <= 1 || gameBoard.get(destinationNumber).isOccupied()) {
+			return 1;
+		}
+		return destinationNumber;
 	}
 
 

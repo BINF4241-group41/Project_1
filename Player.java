@@ -8,7 +8,6 @@ public class Player {
 
     Player(String playerName) {
         this.name = playerName;
-        // TODO: Initialize to first square.
     }
 
     public String getName() {
