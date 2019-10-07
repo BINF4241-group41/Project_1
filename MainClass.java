@@ -40,12 +40,16 @@ public class MainClass {
         }
 
         myGame = new Game(boardSize, playerNames.toArray(new String[playerNames.size()]));
+        System.out.println("Initial state: " + myGame.toString());
 
         do {
+            String playerName = myGame.getNextPlayerName();
             myGame.nextAction();
+            System.out.println(playerName + " rolls " + myGame.getLastDiceRoll() ": " + myGame.toString());
         }
         while (!myGame.isFinished());
 
-        System.out.println(myGame.getLastSquare.getPlayerName());
+        System.out.println("Final state: " + myGame.toString());
+        System.out.println(myGame.getLastSquare.getPlayerName() + " wins!");
     }
 }
