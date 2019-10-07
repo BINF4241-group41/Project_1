@@ -31,6 +31,19 @@ public class Game {
 		for(int i = 2; i < boardSize; ++i) {
 			gameBoard[i] = new Square(i); //normal square
 		}
+
+		// add snaked, ladders
+		for(int i = 3; i <= boardSize - 5; i += 3) {
+			// snakes every 6. field starting at 6, moving the player 4 back
+			if (i % 6 == 0) {
+				Square destination = gameBoard[i - 4];
+			}
+			// snakes every 6. field starting at 3, moving the player 5 ahead
+			else {
+				Square destination = gameBoard[i + 5];
+			}
+			gameBoard[i] = new TeleportSquare(i, destination); // replace square
+		}
 		
 		for (Player p : players) { //set up all players in the first square
 			this.players.add(p);

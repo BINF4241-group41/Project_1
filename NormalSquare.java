@@ -21,6 +21,7 @@ public class NormalSquare extends Square{
 	public void addPlayer(Player player) {
 		myPlayer=player;
 	}
+
 	// remove a player from the square
 	public void removePlayer() {
 		myPlayer=null;
@@ -30,7 +31,6 @@ public class NormalSquare extends Square{
 		return (myPlayer != null);
 	}
 
-	@Override
 	public String toString() {
 		return "[" + numberSquare + "<" + getPlayerName() + ">" + "]";
 	}
