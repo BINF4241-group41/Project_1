@@ -1,4 +1,4 @@
-package project;
+package Project_1;
 
 import java.util.ArrayList;
 
@@ -31,14 +31,14 @@ public class FirstSquare extends Square {
 	public String getPlayerName() { return getPlayerNames(); }
 
 	public boolean isOccupied() {
-		return (players.size() != 0);
+		return false;
 	}
 
 	// helper function for toString
 	private String getPlayerNamesList() {
 		String s="";
 		for(Player p : players) {
-			s.concat("<" + p.getName() + ">");
+			s += "<" + p.getName() + ">";
 		}
 		return s;
 	}

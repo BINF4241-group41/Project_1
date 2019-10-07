@@ -1,4 +1,4 @@
-package project;
+package Project_1;
 
 
 public class LastSquare extends Square {
@@ -24,6 +24,9 @@ public class LastSquare extends Square {
 	public String getPlayerName() { return (myPlayer != null ? myPlayer.getName() : ""); }
 
 	public String toString() {
-		return "[" + numberSquare + "<" + getPlayerName() + ">" + "]";
+		if (myPlayer != null) {
+			return "[" + numberSquare + "<" + getPlayerName() + ">" + "]";
+		}
+		return "[" + numberSquare + "]";
 	}
 }

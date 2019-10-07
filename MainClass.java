@@ -1,4 +1,4 @@
-package project;
+package Project_1;
 
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -6,10 +6,11 @@ import java.util.Scanner;
 
 public class MainClass {
 
-    // Arguments: [boardSize, name1, name2, name3. name4, ...]
+    // Arguments: [boardSize (int), name1, name2, name3, name4]
     public static void main(String[] args) {
 
         Game myGame;
+        Dice myDice = new Dice();
 
         // variables for input parameters
         int boardSize;
@@ -18,7 +19,7 @@ public class MainClass {
         Scanner myScanner = new Scanner(System.in);
 
         do {
-            System.out.println("Enter the number of squares of the board (must be positive)");
+            System.out.println("Enter the number of squares of the board (must be a positive integer)");
             String size = myScanner.nextLine();
             boardSize = Integer.parseInt(size);
         }
@@ -29,7 +30,7 @@ public class MainClass {
             System.out.println("Enter the name of the next player (or START to begin the game)");
             String nextName = myScanner.nextLine();
 
-            if (nextName == "START") {
+            if (nextName.equals("START")) {
                 break;
             }
             playerNames.add(nextName);
@@ -44,9 +45,9 @@ public class MainClass {
         System.out.println("Initial state: " + myGame.toString());
 
         do {
-            String playerName = myGame.getNextPlayerName();
-            myGame.nextAction();
-            System.out.println(playerName + " rolls " + myGame.getLastDiceRoll() + ": " + myGame.toString());
+            int diceResult = myDice.rollDice();
+            System.out.println(myGame.getNextPlayer().getName() + " rolls " + diceResult + ": " + myGame.toString());
+            myGame.movePlayer(diceResult); // roll dice, move player
         }
         while (!myGame.isFinished());
 

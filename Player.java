@@ -1,4 +1,4 @@
-package project;
+package Project_1;
 
 
 public class Player {

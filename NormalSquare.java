@@ -1,4 +1,4 @@
-package project;
+package Project_1;
 
 
 // Square without functionality (no snakes/ladders).
@@ -16,15 +16,13 @@ public class NormalSquare extends Square{
 		return numberSquare;
 	}
 
-	// move a player to the square
-	@Override
 	public void addPlayer(Player player) {
-		myPlayer=player;
+		myPlayer = player;
 	}
 
 	// remove a player from the square
 	public void removePlayer() {
-		myPlayer=null;
+		myPlayer = null;
 	}
 
 	public boolean isOccupied() {
@@ -32,7 +30,10 @@ public class NormalSquare extends Square{
 	}
 
 	public String toString() {
-		return "[" + numberSquare + "<" + getPlayerName() + ">" + "]";
+		if (myPlayer != null) {
+			return "[" + numberSquare + "<" + getPlayerName() + ">" + "]";
+		}
+		return "[" + numberSquare + "]";
 	}
 
 	public String getPlayerName() {

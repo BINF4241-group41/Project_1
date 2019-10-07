@@ -1,4 +1,4 @@
-package project;
+package Project_1;
 
 
 // Special square that moves the player to another square.
@@ -27,9 +27,15 @@ public class TeleportSquare extends Square{
         return teleportDestination.isOccupied();
     }
 
-    @Override
     public String toString() {
-        return "[" + numberSquare + "->" + teleportDestination.getNumberSquare() + "]";
+        // ladder
+        if (teleportDestination.getNumberSquare() > numberSquare) {
+            return "[" + numberSquare + "->" + teleportDestination.getNumberSquare() + "]";
+        }
+        // snake
+        else {
+            return "[" + teleportDestination.getNumberSquare() + "<-" + numberSquare + "]";
+        }
     }
 
     public String getPlayerName() {
