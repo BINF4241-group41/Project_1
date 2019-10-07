@@ -21,7 +21,7 @@ public class LastSquare extends Square {
 		myPlayer = null;
 	}
 
-	public String getPlayerName() { return (myPlayer ? myPlayer.getName() : "") };
+	public String getPlayerName() { return (myPlayer != null ? myPlayer.getName() : ""); }
 
 	public String toString() {
 		return "[" + numberSquare + "<" + getPlayerName() + ">" + "]";

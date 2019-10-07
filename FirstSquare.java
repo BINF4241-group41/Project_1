@@ -1,7 +1,7 @@
 package project;
 
-
 import java.util.ArrayList;
+
 
 public class FirstSquare extends Square {
 
@@ -16,6 +16,10 @@ public class FirstSquare extends Square {
 		players.add(player);
 	}
 
+	public void removePlayer() {
+		players.remove(0);
+	}
+
 	public void removePlayer(Player player) {
 		players.remove(player);
 	}
@@ -24,7 +28,11 @@ public class FirstSquare extends Square {
 		return "[" + numberSquare + getPlayerNamesList() + "]";
 	}
 
-	public String getPlayerName() { return getPlayerNames() };
+	public String getPlayerName() { return getPlayerNames(); }
+
+	public boolean isOccupied() {
+		return (players.size() != 0);
+	}
 
 	// helper function for toString
 	private String getPlayerNamesList() {

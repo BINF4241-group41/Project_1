@@ -10,12 +10,12 @@ public abstract class Square {
         return numberSquare;
     }
 
-    public boolean isOccupied();
+    public abstract boolean isOccupied();
 
-    public void addPlayer(Player player); // Game should check if already occupied.
-    public void removePlayer();
+    public abstract void addPlayer(Player player); // Game should check if already occupied.
+    public abstract void removePlayer();
 
-    public String getPlayerName();
+    public abstract String getPlayerName();
 
-    public String toString();
+    public abstract String toString();
 }

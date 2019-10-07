@@ -17,7 +17,7 @@ public class TeleportSquare extends Square{
     }
 
     public void addPlayer(Player player) {
-        teleportDestination.addPlayer();
+        teleportDestination.addPlayer(player);
     }
 
     // remove a player from the square

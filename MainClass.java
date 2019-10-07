@@ -1,5 +1,6 @@
 package project;
 
+import java.util.ArrayList;
 import java.util.Scanner;
 
 
@@ -45,11 +46,11 @@ public class MainClass {
         do {
             String playerName = myGame.getNextPlayerName();
             myGame.nextAction();
-            System.out.println(playerName + " rolls " + myGame.getLastDiceRoll() ": " + myGame.toString());
+            System.out.println(playerName + " rolls " + myGame.getLastDiceRoll() + ": " + myGame.toString());
         }
         while (!myGame.isFinished());
 
         System.out.println("Final state: " + myGame.toString());
-        System.out.println(myGame.getLastSquare.getPlayerName() + " wins!");
+        System.out.println(myGame.getLastSquare().getPlayerName() + " wins!");
     }
 }

@@ -36,6 +36,6 @@ public class NormalSquare extends Square{
 	}
 
 	public String getPlayerName() {
-		return (myPlayer ? myPlayer.getName() : "")
+		return (myPlayer != null ? myPlayer.getName() : "");
 	}
 }
