@@ -16,18 +16,18 @@ public class Ladder extends Square{
             int numberGenerated = rd.nextInt(game.getBoardSize()) + 1;
             // Creating the beginning of the snake
             if (!gameboard[numberGenerated].isOccupied()) {
-                ladders[i][0] = numberGenerated;
+                ladders[i][0] = numberGenerated; //This may change the value of gameboard[numberGenerated]
+
                 // Creating the end of the snake
                 numberGenerated = rd.nextInt(game.getBoardSize()) + 1;
                 if (!gameboard[numberGenerated].isOccupied()) {
-                    ladders[i][1] = numberGenerated;
+                    ladders[i][1] = numberGenerated; //This may change the value of gameboard[numberGenerated]
                 }
             }
         }
     }
 
 
-    @Override
     public boolean isOccupied() {
         return false;
     }

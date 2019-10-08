@@ -18,11 +18,11 @@ public class Snake extends Square {
             int numberGenerated = rd.nextInt(game.getBoardSize()) + 1;
             // Creating the beginning of the snake
             if (!gameboard[numberGenerated].isOccupied()) {
-                snakes[i][0] = numberGenerated;
+                snakes[i][0] = numberGenerated; //This may change the value of gameboard[numberGenerated]
                 // Creating the end of the snake
                 numberGenerated = rd.nextInt(game.getBoardSize()) + 1;
                 if (!gameboard[numberGenerated].isOccupied()) {
-                    snakes[i][1] = numberGenerated;
+                    snakes[i][1] = numberGenerated; //This may change the value of gameboard[numberGenerated]
                 } else { i--; }
             } else { i--;}
         }
