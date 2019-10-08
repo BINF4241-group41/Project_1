@@ -13,18 +13,21 @@ public class MainClass {
         Dice myDice = new Dice();
 
         // variables for input parameters
-        int boardSize;
+        int boardSize=12;
         ArrayList<String> playerNames = new ArrayList<String>();
 
         Scanner myScanner = new Scanner(System.in);
-
-        do {
-            System.out.println("Enter the number of squares of the board (must be a positive integer)");
-            String size = myScanner.nextLine();
-            boardSize = Integer.parseInt(size);
+        try {
+            do {
+                System.out.println("Enter the number of squares of the board (must be a positive integer)");
+                String size = myScanner.nextLine();
+                boardSize = Integer.parseInt(size);
+            }
+            
+             while (boardSize < 1);
+        } catch (Exception e) {
+            System.out.println("Input error - default board is 12");
         }
-        while (boardSize < 1);
-
 
         for (int i = 0; i < 4; ++i) {
             System.out.println("Enter the name of the next player (or START to begin the game)");

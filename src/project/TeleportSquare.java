@@ -20,6 +20,10 @@ public class TeleportSquare extends Square{
         teleportDestination.addPlayer(player);
     }
 
+    public removePlayer(){
+        return;
+    }
+
     public boolean isOccupied() {
         return teleportDestination.isOccupied();
     }
