@@ -7,10 +7,9 @@ public class Game {
 
 	private int boardSize;
 	private Square[] gameBoard; // squares starting at index 1
-
+	private static final int FIRST_SQUARE=1;
 	private ArrayList<Player> players;
 	private int nextPlayerIndex = 0;
-	public int NUM_PLAYERS = players.size();
 
 
 	public Game(int size, String[] playerNames) {
@@ -22,15 +21,17 @@ public class Game {
 		}
 
 		players = new ArrayList<Player>();
+	    this.boardSize = size;
+	    this.gameBoard = new Square[boardSize + FIRST_SQUARE]; // leave first empty -> Square.numberSquare == index
 
-	    boardSize = size;
-	    gameBoard = new Square[boardSize + 1]; // leave first empty -> Square.numberSquare == index
+		//set the last and the first squares because are different
+		this.gameBoard[FIRST_SQUARE] = new FirstSquare(FIRST_SQUARE);
+		this.gameBoard[boardSize] = new LastSquare(boardSize);
 
-		gameBoard[1] = new FirstSquare(1);
-		gameBoard[boardSize] = new LastSquare(boardSize);
 
+		// set the normal squares
 		for(int i = 2; i < boardSize; ++i) {
-			gameBoard[i] = new NormalSquare(i); //normal square
+			gameBoard[i] = new NormalSquare(i);
 		}
 
 		// add snaked, ladders
@@ -48,28 +49,26 @@ public class Game {
 			gameBoard[i] = new TeleportSquare(i, destination); // replace square
 		}
 
-		for (String name : playerNames) { //set up all players in the first square
+
+		//set up all players in the first square
+		for (String name : playerNames) { 
 			Player player = new Player(name);
 			players.add(player);
-            player.setPosition(gameBoard[1]);
+            player.setPosition(gameBoard[FIRST_SQUARE]);
         }
 	}
 
-	public int getBoardSize() {
-	    return this.boardSize;
-    }
+	public int getBoardSize() { return this.boardSize;}
 
     public int getNumberPlayers() { return NUM_PLAYERS; }
 
     public Player getNextPlayer() { return players.get(nextPlayerIndex); }
 
-    public FirstSquare getFirstSquare() { return (FirstSquare)gameBoard[1]; }
+    public FirstSquare getFirstSquare() { return (FirstSquare)gameBoard[FIRST_SQUARE]; }
 
 	public LastSquare getLastSquare() { return (LastSquare)gameBoard[boardSize]; }
 
-	public Square[] getGameBoard() {
-		return gameBoard;
-	}
+	public Square[] getGameBoard() { return gameBoard;}
 
 
     // Rolls the dice and moves the player accordingly (obeying the rules).

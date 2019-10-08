@@ -30,12 +30,12 @@ public class MainClass {
             System.out.println("Enter the name of the next player (or START to begin the game)");
             String nextName = myScanner.nextLine();
 
-            if (nextName.equals("START")) {
-                break;
-            }
+            if (nextName.equals("START")) break;
+            
             playerNames.add(nextName);
         }
 
+        myScanner.close(); //always write scanner.close()
         // ensure that there are 2+ players
         for (int i = playerNames.size(); i < 2; ++i) {
             playerNames.add("AIPlayer" + i);
