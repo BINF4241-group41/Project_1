@@ -1,4 +1,4 @@
-package Project_1;
+package project;
 
 import java.util.ArrayList;
 
@@ -10,6 +10,7 @@ public class Game {
 
 	private ArrayList<Player> players;
 	private int nextPlayerIndex = 0;
+	public int NUM_PLAYERS = players.size();
 
 
 	public Game(int size, String[] playerNames) {
@@ -58,11 +59,17 @@ public class Game {
 	    return this.boardSize;
     }
 
+    public int getNumberPlayers() { return NUM_PLAYERS; }
+
     public Player getNextPlayer() { return players.get(nextPlayerIndex); }
 
     public FirstSquare getFirstSquare() { return (FirstSquare)gameBoard[1]; }
 
 	public LastSquare getLastSquare() { return (LastSquare)gameBoard[boardSize]; }
+
+	public Square[] getGameBoard() {
+		return gameBoard;
+	}
 
 
     // Rolls the dice and moves the player accordingly (obeying the rules).

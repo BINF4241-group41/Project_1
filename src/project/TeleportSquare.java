@@ -1,4 +1,4 @@
-package Project_1;
+package project;
 
 
 // Special square that moves the player to another square.

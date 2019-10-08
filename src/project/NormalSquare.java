@@ -1,4 +1,4 @@
-package Project_1;
+package project;
 
 
 // Square without functionality (no snakes/ladders).
